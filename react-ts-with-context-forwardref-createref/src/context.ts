@@ -1,8 +1,10 @@
 import { createContext } from "react";
 
-// trường hợp context là  giá trị mặc định
-export type ThemeContextType = "light" | "dark";
+// trường hợp context không có giá trị mặc định
+export interface CurrentUserContextType {
+  username: string;
+}
 
-const ThemeContext = createContext<ThemeContextType>("dark");
+const CurrentUserContext = createContext<CurrentUserContextType | null>(null);
 
-export default ThemeContext;
+export default CurrentUserContext;

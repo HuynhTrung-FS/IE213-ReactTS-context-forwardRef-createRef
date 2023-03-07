@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-import ThemeContext from "../context";
+import CurrentUserContext from "../context";
 
 export default function ChildComponent() {
-  const theme = useContext(ThemeContext);
-  return <div>The current user is {theme}</div>;
+  const user = useContext(CurrentUserContext);
+  return <div>The current user is {user?.username}</div>;
 }

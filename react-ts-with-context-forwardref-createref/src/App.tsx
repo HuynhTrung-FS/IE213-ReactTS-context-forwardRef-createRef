@@ -3,16 +3,18 @@ import "./App.css";
 
 import { useState } from "react";
 import ChildComponent from "./Components/ChildComponent";
-import ThemeContext, { ThemeContextType } from "./context";
+import CurrentUserContext, { CurrentUserContextType } from "./context";
 
 function App() {
-  const [theme, setTheme] = useState<ThemeContextType>("dark");
+  const [user, setUser] = useState<CurrentUserContextType>({
+    username: "filiptammergard",
+  });
   return (
-    <ThemeContext.Provider value={theme}>
+    <CurrentUserContext.Provider value={user}>
       <div className="App">
         <ChildComponent />
       </div>
-    </ThemeContext.Provider>
+    </CurrentUserContext.Provider>
   );
 }
 
